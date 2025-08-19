@@ -24,3 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@utility bb {
+  @apply shadow-[0_0_0_1px_red];
+}
