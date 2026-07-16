@@ -1,0 +1,45 @@
+.ripple {
+  --borderRadius: 0;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: var(--borderRadius);
+
+  --top: 0;
+  --left: 0;
+  --color: rgba(255, 255, 255, 0.5);
+  --duration: 500ms;
+  --scaleSize: 20;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+    overflow: hidden;
+    height: 10px;
+    width: 10px;
+    background-color: var(--color);
+    border-radius: 50%;
+    animation: ripple-effect var(--duration) linear forwards;
+    pointer-events: none;
+  }
+}
+
+@keyframes ripple-effect {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.3;
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(var(--scaleSize));
+    opacity: 0;
+  }
+}

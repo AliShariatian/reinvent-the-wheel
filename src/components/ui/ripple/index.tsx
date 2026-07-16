@@ -3,19 +3,14 @@
 import { FC, ReactElement, ReactNode } from "react";
 
 import { useRipple } from "@/hooks/use-ripple";
-import { cn } from "@/utils";
 
 type Props = {
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
+  disabled?: boolean;
 };
 
-export const Ripple: FC<Props> = ({ children, className }): ReactElement => {
-  const ref = useRipple<HTMLDivElement>({ scaleSize: 30 });
-
-  return (
-    <div ref={ref} className={cn("", className)}>
-      {children}
-    </div>
-  );
+export const Ripple: FC<Props> = ({ disabled, ...props }): ReactElement => {
+  const ref = useRipple<HTMLDivElement>({ scaleSize: 30, disabled });
+  return <div ref={ref} {...props} />;
 };
