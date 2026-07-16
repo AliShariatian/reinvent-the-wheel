@@ -1,6 +1,8 @@
 import { FC, ReactElement, ReactNode } from "react";
 import type { Metadata } from "next";
 
+import { ReactScan } from "@/components/performance/react-scan";
+
 import { geistMono, geistSans } from "@/fonts";
 import "./globals.css";
 
@@ -16,6 +18,8 @@ type Props = Readonly<{
 const RootLayout: FC<Props> = ({ children }): ReactElement => {
   return (
     <html lang="en">
+      <ReactScan />
+
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
     </html>
   );
