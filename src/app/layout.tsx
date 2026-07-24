@@ -2,6 +2,8 @@ import { FC, ReactElement, ReactNode } from "react";
 import type { Metadata } from "next";
 
 import { ReactScan } from "@/components/performance/react-scan";
+import { IconsProvider } from "@/components/core/icons-provider";
+import { Header } from "@/components/layouts/header";
 
 import { geistMono, geistSans } from "@/fonts";
 import "./globals.css";
@@ -20,7 +22,13 @@ const RootLayout: FC<Props> = ({ children }): ReactElement => {
     <html lang="en">
       <ReactScan />
 
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <IconsProvider>
+          <Header />
+
+          {children}
+        </IconsProvider>
+      </body>
     </html>
   );
 };

@@ -2,7 +2,12 @@ import { FC, ReactElement } from "react";
 
 import { Container } from "@/components/layouts/container";
 
-import { ModalExample, DialogExample, RippleExample } from "./_components/examples";
+import {
+  ModalExample,
+  DialogExample,
+  RippleExample,
+  NavLinkExample,
+} from "./_components/examples";
 
 const HomePage: FC = (): ReactElement => {
   return (
@@ -11,6 +16,7 @@ const HomePage: FC = (): ReactElement => {
         <ModalExample />
         <DialogExample />
         <RippleExample />
+        <NavLinkExample />
       </Container>
     </div>
   );

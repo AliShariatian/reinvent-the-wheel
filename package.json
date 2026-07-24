@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --ignore-unknown --write ."
+    "format": "prettier --ignore-unknown --write .",
+    "typegen": "next typegen"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

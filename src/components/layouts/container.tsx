@@ -1,10 +1,10 @@
-import { FC, ReactElement, ReactNode } from "react";
+import type { FC, ReactElement, ReactNode, JSX } from "react";
 import { cn } from "@/utils";
 
 type Props = {
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
-  as?: "div" | "section" | "main";
+  as?: keyof Pick<JSX.IntrinsicElements, "div" | "section" | "main">;
 };
 
 export const Container: FC<Props> = ({ children, className, as: Tag = "div" }): ReactElement => {
